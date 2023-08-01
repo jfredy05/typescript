@@ -1,7 +1,6 @@
-// @ts-check
 (async ()=> {
   const myCart = [];
-  const products: (any) = [];
+  const products = [];
   const limit = 2;
 
   async function getProducts() {
@@ -11,16 +10,14 @@
     const data = await rta.json();
     products.concat(data);
   }
-
   function getTotal() {
     let total = 0;
     for (let i = 0; i < products.length; i++) {
-      total += products[i].price;
+      total += products[i].prize;
     }
     return total;
   }
-
-  function addProduct(index:number) {
+  function addProduct(index) {
     if (getTotal() <= limit) {
       myCart.push(products[index]);
     }
@@ -35,6 +32,6 @@
     name: 'Nicolas',
     lastName: 'Molina'
   }
-  // const rta = person + limit;
+  // const rta = person +  limit;
   // console.log(rta);
-});
+})();
